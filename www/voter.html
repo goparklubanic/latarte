@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <link rel="stylesheet" type="text/css" href="css/pakrt.css" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/voter.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<<body style="background-color:#076807;">
+  <div class="top-header">
+    <h3 id="rtrw">CALON PEMILIH</h3>
+  </div>
+<div class='container-fluid'>
+  <div class="row isian">
+	<h4 class='block-title'><a href="index.html">Kembali</a></h4>
+  </div>
+  <div class="row">
+  <form id="voterForm">
+	  <div class="form-group">
+		  <label for="">Tanggal Pemilihan</label>
+		  <input type="date" class="form-control" id="tglVote" />
+	  </div>
+	  <div class="form-group">
+		  <label for="">Tanggal Lahir Pemilih Termuda</label>
+		  <input type="text" class="form-control" id="tgVoter" 
+		  placeHolder="Tanggal Lahir Pemilih Termuda" readOnly />
+	  </div>
+	  <div class="form-group">
+		  <a class="form-control btn btn-primary" id="carivoter">Cari Pemilih</a>
+	  </div>
+  </form>
+  </div>
+  <div>
+	  <ul id="voterList" class='list-group'></ul>
+  </div>
+  <div class="row">
+	  <table border="0" width="100%" id="votepager">
+		  <tr>
+			  <td width="40%"><button id="voterprev" class="form-control"> Sebelum </button></td>
+			  <td width="20%" id="voterpage">1</td>
+			  <td width="40%"><button id="voternext" class="form-control"> Berikut </button></td>
+		  </tr>
+	  </table>
+  </div>
+  <div class="row" style="height:60px">&nbsp;</div>
+
+  <div class="row page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p> 
+  </div>
+</div>
+</html>
+
+

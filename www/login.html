@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <link rel="stylesheet" type="text/css" href="css/pakrt.css" />
+    <!-- bootstrap resource -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <title>LOGIN</title>
+</head>
+<body style="background-color:#076807;">
+	<div id="lgbox">
+		
+			<div class="form-group">
+				<label for='uname'>Nama Pengguna</label>
+				<input type='text' class='form-control' id="uname" value='RTRW'>
+			</div>
+			
+			<div class="form-group">
+				<label for='sandi'>Kata Sandi</label>
+				<input type='password' class='form-control' id="sandi" value='smg'>
+			</div>
+			
+			<div class="form-group">
+				<a class='form-control btn btn-primary' id="sbbtn">Login</a>
+			</div>
+		
+	</div>
+	<div id="lgres"></div>
+</body>

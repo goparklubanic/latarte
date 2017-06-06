@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/pindah.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<body style="background-color:#076807;">
+  <div class="top-header">
+    <h3>PERMOHONAN PINDAH</h3>
+  </div>
+  
+<div class='container-fluid'>
+	<!--form id="fr_lahir"-->
+	  <div class="form-group">
+		  <label for="nokk">NOMOR Kartu Keluarga</label>
+		  <input class="form-control" id="nokk" data-toggle="modal" data-target="#Modal_KK">
+	  </div>	  
+	  <div class="form-group">
+		  <label for="nik">NIK Pemohon</label>
+		  <input class="form-control" id="nik" data-toggle="modal" data-target="#Modal_AKK">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="alasan">Alasan Kepindahan</label>
+		  <select class="form-control" id="alasan">
+			<option value="[ 1 ] Pekerjaan">[ 1 ] Pekerjaan</option>
+			<option value="[ 2 ] Pendidikan">[ 2 ] Pendidikan</option>
+			<option value="[ 3 ] Keamanan">[ 3 ] Keamanan</option>
+			<option value="[ 4 ] Kesehatan">[ 4 ] Kesehatan</option>
+			<option value="[ 5 ] Perumahan">[ 5 ] Perumahan</option>
+			<option value="[ 6 ] Keluarga">[ 6 ] Keluarga</option>
+			<option value="[ 7 ] Lainnya">[ 7 ] Lainnya</option>
+		  </select>
+	  </div>
+	  
+	  
+	  <div class="form-group">
+		  <label for="tujuan">Alamat Tujuan</label>
+		  <textarea class="form-control" id="tujuan" rows="4">RT/RW, KAMPUNG
+Kecamatan, Kabupaten
+Kode Pos: 
+		  </textarea>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="jenis">Jenis Kepndahan</label>
+		  <select class="form-control" id="jenis"  >
+			<option value="[ 1 ] Keluarga">[ 1 ] Keluarga</option>
+			<option value="[ 2 ] Keluarga dan Seluruh Anggota">[ 2 ] Keluarga dan Seluruh Anggota</option>
+			<option value="[ 3 ] Keluarga dan Sebagian Anggota">[ 3 ] Keluarga dan Sebagian Anggota</option>
+			<option value="[ 4 ] Anggota Keluarga">[ 4 ] Anggota Keluarga</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="kkpindah">Status KK Pindah</label>
+		  <select class="form-control" id="kkpindah">
+			<option value="[ 1 ] Numpang KK">[ 1 ] Numpang KK</option>
+			<option value="[ 2 ] Membuat KK Baru">[ 2 ] Membuat KK Baru</option>
+			<option value="[ 3 ] Nomor KK Tetap">[ 3 ] Nomor KK Tetap</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="kktetap">Status KK Menetap</label>
+		  <select class="form-control" id="kktetap">
+			<option value="[ 1 ] Numpang KK">[ 1 ] Numpang KK</option>
+			<option value="[ 2 ] Membuat KK Baru">[ 2 ] Membuat KK Baru</option>
+			<option value="[ 3 ] Nomor KK Tetap">[ 3 ] Nomor KK Tetap</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="pengikut">NIK Keluarga yang pindah</label>
+		  <textarea class="form-control" id="pengikut" rows="4" data-toggle="modal" data-target="#Check_AKK" >Pisahkan dengan tanda koma
+		  </textarea>
+	  </div>
+	  <div class="form-group">
+		  <input class="form-control btn btn-primary" type="submit" id="lapor" value="KIRIM PERMOHONAN">
+	  </div>
+
+	<!--/form-->
+
+<div id="response"></div>
+<div>
+	<h4 class='block-title'><a href="index.html">Kembali</a></h4>
+</div>
+  <div class="row" style="height:60px">&nbsp;</div>
+
+  <div class="row page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p> 
+  </div>
+</div>
+</div>
+<!-- modals -->
+<!-- Modal -->
+<div id="Modal_KK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CARI KEPALA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  <input id="nama_KK" class="form-control">
+        <ul id="daft_KK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="Modal_AKK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ANGGOTA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  
+        <ul id="daft_AKK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="Check_AKK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ANGGOTA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >  
+        <div id="move_AKK"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="moveakk" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- modals -->
+</body>
+</html>
+
+

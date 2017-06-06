@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />    
+    <link rel="stylesheet" type="text/css" href="css/pakrt.css" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/lahir.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<body style="background-color:#076807;">
+  <div class="top-header">
+    <h3>LAPORAN KELAHIRAN</h3>
+  </div>
+  
+<div class='container-fluid'>
+	<!--form id="fr_lahir"-->
+	  <div class="form-group">
+		  <label for="nokk">NOMOR Kartu Keluarga</label>
+		  <input class="form-control" id="nokk" data-toggle="modal" data-target="#Modal_KK">
+	  </div>	  
+	  <div class="form-group">
+		  <label for="nikbpk">NIK Bapak</label>
+		  <input class="form-control" id="nikbpk" data-toggle="modal" data-target="#Modal_AKK">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="nikibu">NIK Ibu</label>
+		  <input class="form-control" id="nikibu" data-toggle="modal" data-target="#Modal_AKK">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_nama">NAMA BAYI</label>
+		  <input class="form-control" id="b_nama">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_klmn">Jenis Kelamin</label>
+		  <select class="form-control" id="b_klmn">
+			    <option>[ L ] Laki-laki</option>
+				<option>[ P ] Perempuan</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_tpdlh">Tempat Dilahirkan</label>
+		  <select class="form-control" id="b_tpdlh">
+			  <option value="[1] RS/RB">Rumah Sakit / Rumah Bersalin</option>
+			  <option value="[2] Puskesmas">Puskesmas</option>
+			  <option value="[3] Polindes">Polindes</option>
+			  <option value="[4] Rumah">Rumah</option>
+			  <option value="[5] Lainnya">Tempat Lain</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_tpklh">Tempat Kelahiran</label>
+		  <input class="form-control" id="b_tpklh" value="Banjarnegara">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_tglhr">Tanggal Lahir</label>
+		  <input class="form-control" id="b_tglhr" type="date">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_jmlhr">Jam Lahir</label>
+		  <input class="form-control" id="b_jmlhr" placeHolder="JJ:MM">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_jnlhr">Jenis Kelahiran</label>
+		  <select class="form-control" id="b_jnlhr">
+			  <option value="[1] Tunggal">Tunggal</option>
+			  <option value="[2] Kembar 2">Kembar 2</option>
+			  <option value="[3] Kembar 3">Kembar 3</option>
+			  <option value="[4] Kembar 4">Kembar 4</option>
+			  <option value="[5] Lainnya">Lainnya</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_anakke">Anak Ke</label>
+		  <input class="form-control" id="b_anakke">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_pnlg">Penolong Kelahiran</label>
+		  <select class="form-control" id="b_pnlg">
+			  <option value="[1] Dokter">Dokter</option>
+			  <option value="[2] Bidan/Perawat">Bidan / Perawat</option>
+			  <option value="[3] Dukun">Dukun</option>
+			  <option value="[4] Lainnya">Lainnya</option>
+		   </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_bb">Berat Badan Bayi</label>
+		  <input class="form-control" id="b_bb" placeHolder="dalam Kg">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="b_pb">Panjang Badan Bayi</label>
+		  <input class="form-control" id="b_pb" placeHolder="dalam cm">
+	  </div>
+	  <div class="form-group">
+		  <input class="form-control btn btn-primary" type="submit" id="lapor" value="KIRIM LAPORAN">
+	  </div>
+	<!--/form-->
+
+<div id="response"></div>
+
+<div>
+	<h4 class='block-title'><a href="index.html">Kembali</a></h4>
+</div>
+  <div class="row" style="height:60px">&nbsp;</div>
+  <div class="row page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p>
+  </div> 
+
+<!-- Modal -->
+<div id="Modal_KK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CARI KEPALA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  <input id="nama_KK" class="form-control">
+        <ul id="daft_KK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="Modal_AKK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ANGGOTA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  
+        <ul id="daft_AKK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+

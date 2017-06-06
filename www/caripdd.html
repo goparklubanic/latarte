@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <link rel="stylesheet" type="text/css" href="css/pakrt.css" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/pencarian.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<body style="background-color:#076807;">
+  <div class="top-header">
+    <h3 id="rtrw">PENCARIAN PENDUDUK</h3>
+  </div>
+<div class='container-fluid'>
+  <div class="row isian">
+	<h4 class='block-title'><a href="index.html">Kembali</a></h4>
+	  
+	<select name="kritcari" id="kritcari" class="form-control">
+		<option value="">Pilih Kriteria</option>
+		<option value="nama_lengkap">Nama Penduduk</option>
+		<option value="st_kawin">Status Perkawinan</option>
+		<option value="agama">Agama</option>
+		<option value="pendidikan">Pendidikan</option>
+		<option value="pekerjaan">Pekerjaan</option>
+		<option value="gol_darah">Golongan Darah</option>
+		<option value="shk">Hubungan Keluarga</option>
+	</select>
+	<div id="blok-nama" class="ngumpetdulu">
+		<input type="text" id="namapen" class="form-control" placeHolder="Nama Warga">
+		<a class="btn btn-success form-control" id="carinama">CARI</a>
+	</div>
+	<div>
+		<ul id="stadata" class="list-group"></ul>
+	</div>
+	<!--
+	<div id="blok-stkw" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">BELUM KAWIN</a>
+		<a href=# class="list-group-item pil-menu">CERAI HIDUP</a>
+		<a href=# class="list-group-item pil-menu">CERAI MATI</a>
+		<a href=# class="list-group-item pil-menu">KAWIN</a>
+	</div>
+	<div id="blok-agama" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">BUDDHA</a>
+		<a href=# class="list-group-item pil-menu">HINDU</a>
+		<a href=# class="list-group-item pil-menu">ISLAM</a>
+		<a href=# class="list-group-item pil-menu">KATHOLIK</a>
+		<a href=# class="list-group-item pil-menu">KONGHUCU</a>
+		<a href=# class="list-group-item pil-menu">KRISTEN</a>
+	</div>
+	
+	<div id="blok-didik" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">AKADEMI/DIPLOMA III/S.MUDA</a>
+		<a href=# class="list-group-item pil-menu">DIPLOMA</a>
+		<a href=# class="list-group-item pil-menu">DIPLOMA I/II</a>
+		<a href=# class="list-group-item pil-menu">DIPLOMA IV/STRATA I</a>
+		<a href=# class="list-group-item pil-menu">PUTUS SEKOLAH</a>
+		<a href=# class="list-group-item pil-menu">SD</a>
+		<a href=# class="list-group-item pil-menu">SD SEDERAJAT</a>
+		<a href=# class="list-group-item pil-menu">SLTA/SEDERAJAT</a>
+		<a href=# class="list-group-item pil-menu">SLTP/SEDERAJAT</a>
+		<a href=# class="list-group-item pil-menu">STRATA II</a>
+		<a href=# class="list-group-item pil-menu">TAMAT SD/SEDERAJAT</a>
+		<a href=# class="list-group-item pil-menu">TIDAK TAMAT SD/SEDERAJAT</a>
+		<a href=# class="list-group-item pil-menu">TIDAK/BELUM SEKOLAH</a>
+	</div>
+	
+	<div id="blok-kerja" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">BELUM/TIDAK BEKERJA</a>
+		<a href=# class="list-group-item pil-menu">BIDAN</a>
+		<a href=# class="list-group-item pil-menu">BURUH HARIAN LEPAS</a>
+		<a href=# class="list-group-item pil-menu">BURUH PETERNAKAN</a>
+		<a href=# class="list-group-item pil-menu">BURUH TANI/PERKEBUNAN</a>
+		<a href=# class="list-group-item pil-menu">GURU</a>
+		<a href=# class="list-group-item pil-menu">INDUSTRI</a>
+		<a href=# class="list-group-item pil-menu">KARYAWAN BUMD</a>
+		<a href=# class="list-group-item pil-menu">KARYAWAN BUMN</a>
+		<a href=# class="list-group-item pil-menu">KARYAWAN HONORER</a>
+		<a href=# class="list-group-item pil-menu">KARYAWAN SWASTA</a>
+		<a href=# class="list-group-item pil-menu">KEPALA DESA</a>
+		<a href=# class="list-group-item pil-menu">KONSTRUKSI</a>
+		<a href=# class="list-group-item pil-menu">MEKANIK</a>
+		<a href=# class="list-group-item pil-menu">PEDAGANG</a>
+		<a href=# class="list-group-item pil-menu">PELAJAR/MAHASISWA</a>
+		<a href=# class="list-group-item pil-menu">PEMBANTU RUMAH TANGGA</a>
+		<a href=# class="list-group-item pil-menu">PENGELOLA RUMAH TANGGA</a>
+		<a href=# class="list-group-item pil-menu">PENSIUNAN</a>
+		<a href=# class="list-group-item pil-menu">PERANGKAT DESA</a>
+		<a href=# class="list-group-item pil-menu">PERDAGANGAN</a>
+		<a href=# class="list-group-item pil-menu">PETANI/PEKEBUN</a>
+		<a href=# class="list-group-item pil-menu">PETERNAK</a>
+		<a href=# class="list-group-item pil-menu">PNS</a>
+		<a href=# class="list-group-item pil-menu">POLRI</a>
+		<a href=# class="list-group-item pil-menu">SOPIR</a>
+		<a href=# class="list-group-item pil-menu">SWASTA</a>
+		<a href=# class="list-group-item pil-menu">TABIB</a>
+		<a href=# class="list-group-item pil-menu">TENTARA NASIONAL INDONESIA</a>
+		<a href=# class="list-group-item pil-menu">TRANSPORTASI</a>
+		<a href=# class="list-group-item pil-menu">TUKANG BATU</a>
+		<a href=# class="list-group-item pil-menu">TUKANG JAHIT</a>
+		<a href=# class="list-group-item pil-menu">TUKANG KAYU</a>
+		<a href=# class="list-group-item pil-menu">TUKANG LAS/PANDAI BESI</a>
+		<a href=# class="list-group-item pil-menu">USTADZ/MUBALIGH</a>
+		<a href=# class="list-group-item pil-menu">WIRASWASTA</a>
+	</div>
+	
+	<div id="blok-golda" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">A</a>
+		<a href=# class="list-group-item pil-menu">AB</a>
+		<a href=# class="list-group-item pil-menu">B</a>
+		<a href=# class="list-group-item pil-menu">O</a>
+		<a href=# class="list-group-item pil-menu">TT</a>
+	</div>
+	
+	<div id="blok-shk" class="list-group ngumpetdulu">
+		<a href=# class="list-group-item pil-menu">ANAK</a>
+		<a href=# class="list-group-item pil-menu">CUCU</a>
+		<a href=# class="list-group-item pil-menu">FAMILI LAIN</a>
+		<a href=# class="list-group-item pil-menu">ISTRI</a>
+		<a href=# class="list-group-item pil-menu">KEPALA KELUARGA</a>
+		<a href=# class="list-group-item pil-menu">LAINNYA</a>
+		<a href=# class="list-group-item pil-menu">MENANTU</a>
+		<a href=# class="list-group-item pil-menu">MERTUA</a>
+		<a href=# class="list-group-item pil-menu">ORANG TUA</a>
+	</div>
+  </div>
+  -->
+</div>
+<div style="height:50px"></div>
+  <div class="row page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p> 
+  </div>
+</html>
+
+

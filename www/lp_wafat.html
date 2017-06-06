@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/wafat.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<body style="background-color:#076807;">
+  <div class="top-header">
+    <h3>LAPORAN KEMATIAN</h3>
+  </div>
+  
+<div class='container-fluid'>
+	<!--form id="fr_lahir"-->
+	  <div class="form-group">
+		  <label for="nokk">NOMOR Kartu Keluarga</label>
+		  <input class="form-control" id="nokk" data-toggle="modal" data-target="#Modal_KK">
+	  </div>	  
+	  <div class="form-group">
+		  <label for="nik">NIK Jenazah</label>
+		  <input class="form-control" id="nik" data-toggle="modal" data-target="#Modal_AKK">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="anakke">Anak Ke</label>
+		  <input class="form-control" id="anakke">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="w_tgl">Tanggal Kematian</label>
+		  <input class="form-control" id="w_tgl" type="date">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="w_jam">Jam Kematian</label>
+		  <input class="form-control" id="w_jam">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="w_sbb">Penyebab</label>
+		  <select class="form-control" id="w_sbb">
+			  <option value="[ 1 ] Sakit/Tua">[ 1 ] Sakit/Tua</option>
+				<option value="[ 2 ] Wabah">[ 2 ] Wabah</option>
+				<option value="[ 3 ] Kecelakaan">[ 3 ] Kecelakaan</option>
+				<option value="[ 4 ] Kriminalitas">[ 4 ] Kriminalitas</option>
+				<option value="[ 5 ] Bunuh Diri">[ 5 ] Bunuh Diri</option>
+		  </select>
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="w_tmpt">Tempat Kematian</label>
+		  <input class="form-control" id="w_tmpt">
+	  </div>
+	  
+	  <div class="form-group">
+		  <label for="w_pnrg">Yang Menerangkan</label>
+		  <select class="form-control" id="w_pnr" >
+		  	<option value="[ 1 ] Dokter">[ 1 ] Dokter</option>
+			<option value="[ 2 ] Tenaga Kesehatan">[ 2 ] Tenaga Kesehatan</option>
+			<option value="[ 3 ] Kepolisian">[ 3 ] Kepolisian</option>
+			<option value="[ 4 ] Lainnya">[ 4 ] Lainnya</option>
+		  </select>
+	  </div>
+	  <div class="form-group">
+		  <input class="form-control btn btn-primary" type="submit" id="lapor" value="KIRIM LAPORAN">
+	  </div>
+
+	<!--/form-->
+
+<div id="response">
+</div>
+<div>
+	<h4 class='block-title'><a href="index.html">Kembali</a></h4>
+</div>
+  <div class="row" style="height:60px">&nbsp;</div>
+
+  <div class="row page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p> 
+  </div>
+</div>
+<!-- modals -->
+<!-- Modal -->
+<div id="Modal_KK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CARI KEPALA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  <input id="nama_KK" class="form-control">
+        <ul id="daft_KK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="Modal_AKK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">ANGGOTA KELUARGA</h4>
+      </div>
+      <div class="modal-body" >
+		  
+        <ul id="daft_AKK"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- modals -->
+</body>
+</html>
+
+

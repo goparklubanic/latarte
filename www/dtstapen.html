@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval'
+                           127.0.0.1:*
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com
+                           ;
+               style-src  'self' 'unsafe-inline'
+                          127.0.0.1
+                           http://*.google.com
+                           http://*.gstatic.com
+                           http://*.googleapis.com
+                           http://*.firebaseio.com
+                           https://*.google.com
+                           https://*.gstatic.com
+                           https://*.googleapis.com
+                           https://*.firebaseio.com" />
+    <link rel="stylesheet" type="text/css" href="css/pakrt.css" />
+    <!-- bootstrap resource -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/chieferte.js"></script>
+    <script type="text/javascript" src="js/dtstapen.js"></script>
+    
+    <title>KETUA RT</title>
+</head>
+</head>
+
+<body style="background-color:#076807;" onLoad=questr()>
+  <div class="top-header">
+    <h3>STATISTIK PENDUDUK</h3>
+  </div>
+ 
+<script>
+function questr()
+{
+	var vars = [], hash;
+    var q = document.URL.split('?')[1];
+    if(q != undefined){
+        q = q.split('&');
+        for(var i = 0; i < q.length; i++){
+            hash = q[i].split('=');
+            vars.push(hash[1]);
+            vars[hash[0]] = hash[1];
+        }
+	}
+	var vlu = vars['val'].replace(/%20/g," ");
+	$('#cat').html(vars['cat']);
+    $('#val').html(vlu);
+	$('#pge').html(vars['p']);
+	
+	getStatList(vars['cat'],vlu,vars['p']);
+	$("#votepager").show();
+}
+
+</script>
+
+<div class='container-fluid'>
+	<div class='row' id="filter-info">
+	  <label>Filter</label><span id="cat"></span><br/>
+	  <label>Data</label><span id="val"></span><br/>
+	  <label>Halaman</label><span id="pge"></span><br/>
+	</div>
+	<div class="row isian">
+		<h4 class='block-title'><a href="caripdd.html">Kembali</a></h4>
+    </div>
+	<div class="row">
+	<ul id="stadata" class="list-group">
+	</ul>
+	</div>
+</div>
+  <div class="row">
+	  <table border="0" width="100%" id="votepager">
+		  <tr>
+			  <td width="40%"><button id="voterprev" class="form-control"> Sebelum </button></td>
+			  <td width="20%" id="voterpage">1</td>
+			  <td width="40%"><button id="voternext" class="form-control"> Berikut </button></td>
+		  </tr>
+	  </table>
+  </div>
+<div class="row" style="height:60px">&nbsp;</div>
+<div class="page-footer"> 
+	  <p>Komunitas Linux Banjarnegara<br/>&copy;2016</p> 
+</div>
+</html>
+
