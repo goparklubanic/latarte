@@ -18,8 +18,9 @@ $(document).ready(function(){
 		var b_pnlg=$("#b_pnlg").val();
 		var b_bb=$("#b_bb").val();
 		var b_pb=$("#b_pb").val();
+		var rtrw = localStorage.getItem('rtrw');
 		$("#response").show();
-		$.post(serviceURL+'laporan.php', {
+		$.post(serviceURL+'laporan.php?zn='+rtrw, {
 			tipelap: lptype,
 			nomorKK: nokk,
 			nikBapak: nikbpk,

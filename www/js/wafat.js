@@ -12,8 +12,9 @@ $(document).ready(function(){
 		var wftSbb=$("#w_sbb").val();
 		var wftTmp=$("#w_tmpt").val();
 		var penerang=$("#w_pnr").val();
+		var rtrw = localStorage.getItem('rtrw');
 		$("#response").show();
-		$.post(serviceURL+'laporan.php', {
+		$.post(serviceURL+'laporan.php?zn='+rtrw, {
 			tipelap: lptype,
 			nomorKK: nokk,
 			nik: nik,

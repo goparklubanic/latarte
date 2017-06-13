@@ -8,8 +8,9 @@ $(document).ready(function(){
 		var nktp=$("#nktp").val();
 		var perlu=$("#perlu").val();
 		var catat=$("#ctt").val();
+		var rtrw = localStorage.getItem('rtrw');
 		
-		$.post(serviceURL+'laporan.php', {
+		$.post(serviceURL+'laporan.php?zn='+rtrw, {
 			tipelap: lptype,
 			nomorKTP: nktp,
 			keperluan: perlu,

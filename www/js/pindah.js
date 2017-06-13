@@ -40,7 +40,8 @@ $(document).ready(function(){
 		var kkpindah=$("#kkpindah").val();
 		var kktetap=$("#kktetap").val();
 		var pengikut=$("#pengikut").val();
-		$.post(serviceURL+'laporan.php', {
+		var rtrw = localStorage.getItem('rtrw');
+		$.post(serviceURL+'laporan.php?zn='+rtrw, {
 			tipelap: lptype,
 			nomorKK: nokk,
 			nik: nik,
